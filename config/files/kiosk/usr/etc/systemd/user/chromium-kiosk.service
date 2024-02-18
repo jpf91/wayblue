@@ -1,0 +1,12 @@
+[Unit]
+Description=Start Chromium in Kiosk Mode
+BindsTo=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/chromium-browser --noerrdialogs --disable-translate --kiosk https://youtube.com
+Restart=always
+StandardOutput=journal
+
+[Install]
+WantedBy=graphical-session.target

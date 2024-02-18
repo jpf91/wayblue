@@ -1,0 +1,29 @@
+type: rpm-ostree
+install:
+# environment
+  - polkit
+  - xdg-user-dirs
+  - dbus-tools
+  - dbus-daemon
+  - google-noto-emoji-fonts
+
+# sound
+  - wireplumber
+  - pipewire
+
+# networking
+  - bluez
+  - bluez-tools
+  - blueman
+
+# display
+  - wlr-randr
+
+# theme and GUI
+  - gnome-themes-extra
+  - gnome-icon-theme
+  - paper-icon-theme
+
+# kiosk support
+  - chromium
+  - squeekboard

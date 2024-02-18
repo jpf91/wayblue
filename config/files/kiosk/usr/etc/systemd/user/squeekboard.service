@@ -1,0 +1,13 @@
+[Unit]
+Description=Squeekboard OSD Keyboard
+BindsTo=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/squeekboard
+Restart=always
+StandardOutput=journal
+Slice=desktop.slice
+
+[Install]
+WantedBy=graphical-session.target

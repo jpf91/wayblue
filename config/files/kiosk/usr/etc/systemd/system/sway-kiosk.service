@@ -1,0 +1,24 @@
+# Based on https://gist.github.com/agboom/eaec2697e3848cd626f25d428d8c30c6
+# Some parts copied from GDM service
+[Unit]
+Description=Sway Kiosk using systemd
+Conflicts=getty@tty1.service
+After=getty@tty1.service
+After=plymouth-quit.service
+After=rc-local.service plymouth-start.service systemd-user-sessions.service
+
+[Service]
+ExecStartPre=/usr/bin/chvt 1
+ExecStart=/usr/bin/sway
+TTYPath=/dev/tty1
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+PAMName=login
+User=kiosk
+WorkingDirectory=/home/kiosk
+Restart=always
+RestartSec=5
+StandardInput=tty
+StandardError=journal
+StandardOutput=journal

@@ -1,0 +1,23 @@
+# image will be published to ghcr.io/<user>/<name>
+name: kiosk
+# description will be included in the image's metadata
+description: wayland kiosk image
+
+# the base image to build on top of (FROM) and the version tag to use
+base-image: ghcr.io/ublue-os/sericea-main
+image-version: 39 # latest is also supported if you want new updates ASAP
+
+# module configuration, executed in order
+# you can include multiple instances of the same module
+modules:
+  - from-file: kiosk-packages.yml
+  - from-file: common-files.yml
+  - from-file: common-scripts.yml
+
+  - type: files
+    files:
+      - kiosk/usr: /usr 
+
+  - type: script
+    scripts:
+      - setupkiosk.sh
