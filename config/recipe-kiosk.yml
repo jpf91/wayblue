@@ -15,9 +15,10 @@ modules:
 
   - type: files
     files:
-      - kiosk/usr: /usr 
+      - kiosk/usr: /usr
+      - kiosk/etc: /etc
 
   - type: script
     scripts:
-      - signing.sh
+#      - signing.sh
       - setupkiosk.sh

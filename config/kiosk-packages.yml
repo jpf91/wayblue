@@ -15,6 +15,9 @@ install:
   - bluez
   - bluez-tools
   - blueman
+  - openssh-server
+  - systemd-networkd
+  - wpa_supplicant
 
 # display
   - wlr-randr
@@ -27,3 +30,4 @@ install:
 # kiosk support
   - chromium
   - squeekboard
+  - firefox

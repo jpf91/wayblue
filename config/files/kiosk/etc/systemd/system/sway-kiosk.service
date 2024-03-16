@@ -22,3 +22,6 @@ RestartSec=5
 StandardInput=tty
 StandardError=journal
 StandardOutput=journal
+
+[Install]
+WantedBy=graphical.target
